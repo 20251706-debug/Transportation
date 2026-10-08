@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoRide - Transportation App</title>
+</head>
+
+<body id="top">
+
+<header>
+    <h1>GoRide</h1>
+    <p><em>Safe rides, better days.</em></p>
+
+    <nav>
+        <a href="#book">Book a Ride</a> |
+        <a href="#fleet">Our Vehicles</a> |
+        <a href="#map">Map</a> |
+        <a href="#media">Media</a> |
+        <a href="#schedule">Schedule</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <hr>
+</header>
+
+<main>
+
+
+<section id="book">
+    <h2>Book a Ride</h2>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Trip Details</legend>
+
+            <p>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </p>
+
+            <p>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="09123456789" required>
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="example@email.com">
+            </p>
+
+            <p>
+                <label for="pickup">Pick-up:</label>
+                <input type="text" id="pickup" list="places" required>
+            </p>
+
+            <p>
+                <label for="dropoff">Drop-off:</label>
+                <input type="text" id="dropoff" list="places" required>
+            </p>
+
+            <datalist id="places">
+                <option value="Central Terminal">
+                <option value="City Hall">
+                <option value="Airport">
+                <option value="University Campus">
+                <option value="Public Market">
+            </datalist>
+
+            <p>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+            </p>
+
+            <p>
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+            </p>
+
+            <p>
+                <label for="passengers">Passengers:</label>
+                <input type="number" id="passengers"
+                       min="1" max="10" value="1">
+            </p>
+
+            <p>
+                <label for="vehicle">Vehicle Type:</label>
+                <select id="vehicle">
+                    <option>Taxi</option>
+                    <option>Van</option>
+                    <option>Shuttle Bus</option>
+                    <option>Motorcycle Taxi</option>
+                    <option>Tricycle</option>
+                </select>
+            </p>
+
+            <p>
+                <strong>Payment Method:</strong><br>
+
+                <input type="radio" id="cash" name="payment"
+                       value="Cash" checked>
+                <label for="cash">Cash</label>
+
+                <input type="radio" id="card" name="payment"
+                       value="Card">
+                <label for="card">Card</label>
+
+                <input type="radio" id="wallet" name="payment"
+                       value="E-Wallet">
+                <label for="wallet">E-Wallet</label>
+            </p>
+
+            <p>
+                <strong>Extras:</strong><br>
+
+                <input type="checkbox" id="luggage" value="luggage">
+                <label for="luggage">Extra Luggage</label><br>
+
+                <input type="checkbox" id="child" value="child-seat">
+                <label for="child">Child Seat</label><br>
+
+                <input type="checkbox" id="wheelchair" value="wheelchair">
+                <label for="wheelchair">Wheelchair Accessible</label>
+            </p>
+
+            <p>
+                <label for="notes">Notes for Driver:</label><br>
+                <textarea id="notes" rows="4" cols="40"
+                    placeholder="Write your message here"></textarea>
+            </p>
+
+            <p>
+                <input type="checkbox" id="terms" required>
+                <label for="terms">
+                    I agree to the
+                    <a href="#terms-info">Terms & Conditions</a>
+                </label>
+            </p>
+
+            <button type="submit">Book Now</button>
+            <button type="reset">Clear</button>
+
+        </fieldset>
+
+    </form>
+
+    <hr>
+</section>
+
+
+<section id="fleet">
+    <h2>Our Vehicles</h2>
+
+    <figure>
+        <img src="Train.jpeg"
+             alt="GoRide Train"
+             width="500"
+             height="333">
+        <figcaption>GoRide Train - Comfortable transportation.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="Trycicle.png"
+             alt="GoRide Tricycle"
+             width="500"
+             height="333">
+        <figcaption>GoRide Tricycle - Convenient local transportation.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="jeepney.jpg"
+             alt="GoRide Jeepney"
+             width="500"
+             height="333">
+        <figcaption>GoRide Jeepney - Affordable public transportation.</figcaption>
+    </figure>
+
+    <hr>
+</section>
+
+
+<section id="map">
+    <h2>GoRide Map</h2>
+
+    <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=120.57%2C16.39%2C120.61%2C16.43&layer=mapnik"
+        width="600"
+        height="400"
+        title="GoRide Map">
+    </iframe>
+
+    <p>
+        <a href="https://www.openstreetmap.org/"
+           target="_blank"
+           rel="noopener">
+            View larger map
+        </a>
+    </p>
+
+    <h3>GoRide Route Map</h3>
+
+    <p>Click an area to view the schedule.</p>
+
+    <img src="Route.png"
+         alt="GoRide Route Map"
+         width="600"
+         height="300"
+         usemap="#goride-map">
+
+    <map name="goride-map">
+
+        <area shape="rect"
+              coords="0,0,200,300"
+              href="#schedule"
+              alt="Central Terminal">
+
+        <area shape="rect"
+              coords="200,0,400,300"
+              href="#schedule"
+              alt="City Hall">
+
+        <area shape="rect"
+              coords="400,0,600,300"
+              href="#schedule"
+              alt="Airport">
+
+    </map>
+
+    <hr>
+</section>
+
+
+<section id="media">
+    <h2>Media</h2>
+
+    <h3>How GoRide Works (Video)</h3>
+
+    <video width="480" controls poster="images/train.jpg">
+        <source src="Vid.mp4" type="video/mp4">
+        <source src="media/goride.ogg" type="video/ogg">
+        Your browser does not support video.
+    </video>
+
+    <h3>Driver Announcement (Audio)</h3>
+
+    <audio controls>
+        <source src="Sound.mp3" type="audio/mpeg">
+        <source src="media/goride.ogg" type="audio/ogg">
+        Your browser does not support audio.
+    </audio>
+
+    <h3>Watch on YouTube</h3>
+
+
+    <iframe
+        width="480"
+        height="270"
+        src="https://www.youtube-nocookie.com/embed/ZY1q26ilkI4"
+        title="Manila to Baguio Luzon Travel Video"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+
+    <hr>
+</section>
+
+
+<section id="schedule">
+    <h2>Shuttle Schedule</h2>
+
+    <table border="1" cellpadding="6" cellspacing="0">
+
+        <caption>Daily departures from Central Terminal</caption>
+
+        <thead>
+            <tr>
+                <th>Route</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Fare</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Baguio Terminal to Manila</td>
+                <td>8:00 AM</td>
+                <td>8:20 AM</td>
+                <td>₱30</td>
+            </tr>
+
+            <tr>
+                <td>Manila(Pasay) Terminal to Baguio</td>
+                <td>9:00 AM</td>
+                <td>9:30 AM</td>
+                <td>₱40</td>
+            </tr>
+
+            <tr>
+                <td>Manila Terminal to Airport</td>
+                <td>10:00 AM</td>
+                <td>10:40 AM</td>
+                <td>₱80</td>
+            </tr>
+
+            <tr>
+                <td>Airport to Public Market</td>
+                <td>11:00 AM</td>
+                <td>11:15 AM</td>
+                <td>₱25</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <h3>Check Your Route</h3>
+
+    <form method="get" action="#">
+        <label for="route">Choose a route:</label>
+
+        <select id="route" name="route">
+            <option>Manila(Pasay) Terminal to Baguio</option>
+            <option>Baguio Terminal to Manila</option>
+            <option>Terminal to Airport</option>
+            <option>Airport to Public Market</option>
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <hr>
+</section>
+
+
+<section id="contact">
+    <h2>Contact & Feedback</h2>
+
+    <form enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Send Feedback</legend>
+
+            <p>
+                <label for="feedback-name">Your Name:</label>
+                <input type="text" id="feedback-name" required>
+            </p>
+
+            <p>
+                <label for="rating">Rate Your Ride (1-5):</label>
+                <input type="range" id="rating"
+                       min="1" max="5" value="5">
+            </p>
+
+            <p>
+                <label for="topic">Topic:</label>
+                <select id="topic">
+                    <option>Compliment</option>
+                    <option>Complaint</option>
+                    <option>Lost Item</option>
+                    <option>Suggestion</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="message">Message:</label><br>
+                <textarea id="message"
+                          rows="5"
+                          cols="40"
+                          required></textarea>
+            </p>
+
+            <p>
+                <label for="photo">Attach a Photo (optional):</label>
+                <input type="file"
+                       id="photo"
+                       accept="image/*">
+            </p>
+
+            <button type="submit">Send Feedback</button>
+
+        </fieldset>
+
+    </form>
+
+    <h3>Reach Us</h3>
+
+    <address>
+        GoRide Transportation<br>
+        General Luna Road, Baguio City<br>
+        Phone:
+        <a href="tel:09123456789">09123456789</a><br>
+        Email:
+        <a href="mailto:goride@example.com">
+            goride@example.com
+        </a>
+    </address>
+
+    <hr>
+</section>
+
+
+
+<section id="links">
+    <h2>Useful Links</h2>
+
+    <ul>
+        <li>
+            <a href="https://www.openstreetmap.org/"
+               target="_blank">
+                OpenStreetMap
+            </a>
+        </li>
+
+        <li>
+            <a href="https://maps.google.com/"
+               target="_blank">
+                Google Maps
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.facebook.com/"
+               target="_blank">
+                Facebook
+            </a>
+        </li>
+
+        <li>
+            <a href="https://osirisai.live/?layers=maritime,satellites,cctv,cctv_previews,live_news,earthquakes,global_incidents,day_night,cables,sdk_sea,sdk_air,sdk_naval,live_clouds"
+               target="_blank">
+                Oriris
+            </a>
+        </li>
+
+        <li>
+            <a href="#top">
+                Back to top
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+<section id="terms-info">
+    <h2>Terms & Conditions</h2>
+
+    <details>
+        <summary>Read the terms</summary>
+
+        <ol>
+            <li>Provide correct information when booking.</li>
+            <li>Follow the instructions of the driver.</li>
+            <li>Respect other passengers and GoRide staff.</li>
+            <li>Follow the scheduled departure time.</li>
+        </ol>
+
+    </details>
+</section>
+
+</main>
+
+<footer>
+    <hr>
+    <p>&copy; 2026 GoRide Transportation.  Created By: Gerard Xypher Q. Pablo.</p>
+</footer>
+
+</body>
+</html>
